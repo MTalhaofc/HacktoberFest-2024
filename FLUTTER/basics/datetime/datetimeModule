@@ -1,0 +1,66 @@
+import 'package:intl/intl.dart';
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const Datetime());
+}
+
+class Datetime extends StatelessWidget {
+  const Datetime({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'TimesNow',
+      theme: ThemeData(primarySwatch: Colors.cyan),
+      home: const TimesNow(),
+    );
+  }
+}
+
+class TimesNow extends StatefulWidget {
+  const TimesNow({super.key});
+
+  @override
+  State<TimesNow> createState() => _TimesNowState();
+}
+
+class _TimesNowState extends State<TimesNow> {
+  @override
+  Widget build(BuildContext context) {
+    var time = DateTime.now();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('TimesNow'),
+        backgroundColor: Colors.yellow,
+      ),
+      body: Center(
+        child: SizedBox(
+          width: 400,
+          height: 300,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                "Current Date: ${DateFormat('yMMMMd').format(time)}",
+                style:
+                    const TextStyle(fontWeight: FontWeight.w500, fontSize: 30),
+              ),
+              Text(
+                "Current Time: ${DateFormat(/*'Hms'*/ 'jms').format(time)}",
+                style:
+                    const TextStyle(fontWeight: FontWeight.w500, fontSize: 30),
+              ),
+              ElevatedButton(
+                  onPressed: () {
+                    setState(() {});
+                  },
+                  child: const Text('Current Time'))
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
