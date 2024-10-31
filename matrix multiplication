@@ -1,0 +1,47 @@
+import java.util.*;
+public class mulMatrix{
+  static int[][] multiply(int[][] A,int[][] B){
+        int[][] ans=new int[A.length][B[0].length];
+        for(int i=0;i<A.length;i++){
+            for(int j=0;j<B[i].length;j++){
+                int sum=0;
+                for(int k=0;k<B.length;k++){
+                    sum+=A[i][k]*B[k][j];
+                }
+                ans[i][j]=sum;
+            }
+        }
+        return ans;
+    }
+
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int N = sc.nextInt();
+        int M= sc.nextInt();
+        int P=sc.nextInt();
+        int[][] matrixA = new int[N][M];
+        int[][] matrixB=new int[M][P];
+        for(int a=0;a<N;a++){
+            for(int b=0;b<M;b++){
+                matrixA[a][b]=sc.nextInt();
+            }
+        }
+
+        for(int c=0;c<M;c++){
+            for(int d=0;d<P;d++){
+                matrixB[c][d]=sc.nextInt();
+            }
+        }
+
+        int[][] matrixAns= new int[N][P];
+        matrixAns=multiply(matrixA, matrixB);
+
+        for(int x=0;x<N;x++){
+            for(int y=0;y<P;y++){
+                System.out.print(matrixAns[x][y]+" ");
+            }
+            System.out.println();
+        }
+    }
+}
