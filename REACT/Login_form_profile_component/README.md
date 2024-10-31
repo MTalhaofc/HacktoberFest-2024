@@ -1,8 +1,16 @@
-# React + Vite
+# Login Form and Profile Component
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a simple React application featuring a **Login Form** and **Profile Component** built with the **Context API** for state management. The Context API provides a way to manage and share state across components without prop drilling.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+
+- **Login Form**: Allows users to enter credentials and login.
+- **Profile Component**: Displays message upon successful login.
+- **Context API**: Manages and shares state (login status, user data) across components.
+
+## Technologies
+
+- **React**: UI library for building the user interface.
+- **Context API**: Manages global state avoiding the need for third-party libraries.
+
